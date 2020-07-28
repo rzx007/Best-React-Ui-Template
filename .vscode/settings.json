@@ -1,0 +1,6 @@
+{
+    "eggHelper.serverPort": 35684,
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+}
