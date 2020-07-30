@@ -29,15 +29,15 @@
 
 .sidebarClose {
     .sidebar-wrapper {
-        width: @sidebarCloseWidth  !important;
+        width: @sidebarCloseWidth ;
     }
 
     .layout-right {
-        margin-left: @sidebarCloseWidth  !important;
+        margin-left: @sidebarCloseWidth;
     }
 
     .ant-menu-inline-collapsed {
-        width: @sidebarCloseWidth  !important;
+        width: @sidebarCloseWidth;
     }
 
     .ant-menu-inline-collapsed>.ant-menu-item,
@@ -48,4 +48,18 @@
         padding: 0 17px !important;
 
     }
+}
+
+@media (max-width: 768px) {
+    .sidebarClose {
+        .sidebar-wrapper {
+            width: 0;
+        }
+
+        .layout-right {
+            margin-left: 0;
+        }
+    }
+
+
 }

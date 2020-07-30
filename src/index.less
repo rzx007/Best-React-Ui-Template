@@ -1,0 +1,144 @@
+@import '~antd/dist/antd.less';
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('./assets/fonts/iconfont.eot');
+  src: url('./assets/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/iconfont.woff') format('woff'),
+    url('./assets/fonts/iconfont.ttf') format('truetype'),
+    url('./assets/fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --basic-color: #005792;
+  --danger-color: #fd5f00;
+  --success-color: #21ae8c;
+  --body-color: #f9fbfd;
+  --sider-bg-color: #fff;
+  --navbar-bg: #fff;
+  --widget-shadow-color: 75, 102, 171;
+  --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
+  --widget-shadow: 4px 4px 30px rgba(var(--widget-shadow-color), 0.2);
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: .6rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: .8px;
+}
+
+.h1,
+h1 {
+  font-size: 3.5rem;
+}
+
+.h2,
+h2 {
+  font-size: 2.6rem;
+}
+
+.h5,
+h5 {
+  font-size: 2.2rem;
+}
+
+.h6,
+h6 {
+  font-size: 1.8rem;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 80%;
+}
+
+// flex 
+.d-flex {
+
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+// font-color
+.text-white {
+  color: #fff !important;
+}
+
+// background
+
+.bg-primary {
+  background-color: var(--basic-color) !important;
+}
+
+.bg-success {
+  background-color: var(--success-color) !important;
+}
+
+.bg-danger {
+  background-color: var(--danger-color) !important;
+}
+
+// margin
+.mt-sm {
+  margin-top: .7rem;
+}
+
+.mt-lg {
+  margin-top: 2rem;
+}

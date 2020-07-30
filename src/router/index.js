@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom'
-import asyncComponent from '../utils/asyncComponent'
+import asyncComponent from '@/utils/asyncComponent'
 
-import Layout from '../components/Layout'
-import Login from '../views/Login'
-const HomePage = asyncComponent(() => import("../views/Home"))
-const AboutPage = asyncComponent(() => import("../views/About"))
-const ListPage = asyncComponent(() => import("../views/List"))
-const NotFound = asyncComponent(() => import("../views/404"))
+import Layout from '@/components/Layout'
+import Login from '@/pages/Login/index'
+const HomePage = asyncComponent(() => import("@/pages/Home/index"))
+const AboutPage = asyncComponent(() => import("@/pages/About/index"))
+const ListPage = asyncComponent(() => import("@/pages/List/index"))
+const NotFound = asyncComponent(() => import("@/pages/NotFound/index"))
 class RouterConfig extends Component {
 
     render() {
         return (
             <HashRouter>
                 <Switch>
-                    <Route  path="/Index" render={() =>
+                    <Route path="/Index" render={() =>
                         <Layout >
                             <Redirect to="/Index/Home" />
                             <Route exact path="/Index/Home" component={HomePage} />
@@ -23,7 +23,7 @@ class RouterConfig extends Component {
                         </Layout>
                     } >
                     </Route>
-                    <Redirect exact from="/"  to="/Index" />
+                    <Redirect exact from="/" to={sessionStorage.getItem('token') ? "/Index" : "/Login"} />
                     <Route exact path="/Login" component={Login} />
                     <Route exact path="/404" component={NotFound} />
                 </Switch>

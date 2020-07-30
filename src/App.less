@@ -1,13 +1,5 @@
-@import '~antd/dist/antd.less';
 
-:root {
-  --body-color: #`f9fbfd;
-  --sider-bg-color: #fff;
-  --navbar-bg: #fff;
-  --widget-shadow-color: 75,102,171;
-  --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
-  --widget-shadow: 4px 4px 30px rgba(var(--widget-shadow-color),0.2);
-}
+
 
 .App {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -17,4 +9,29 @@
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   background-color: var(--body-color);
+}
+
+.widget-wrap{
+  padding-bottom: 40px;
+  height: 100%;
+
+.widget {
+  box-shadow: var(--widget-shadow);
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 1rem;
+  position: relative;
+  height: 100%;
+
+  .title {
+    color: #444;
+  }
+
+  .widgetBody {
+    margin-top: 15px;
+  }
+  .mt{
+    margin-top: 1.4rem;
+  }
+  }
 }
