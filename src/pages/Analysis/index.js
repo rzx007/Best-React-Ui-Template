@@ -2,13 +2,13 @@ import React from "react";
 import { Row, Col } from 'antd';
 import "./index.less"
 
-import VisitItem from '@/views/Home/VisitItem';
-import Revenue from '@/views/Home/Revenue';
-import Progress from '@/views/Home/Progress';
-import Calendar from '@/views/Home/Calendar';
-import Notification from '@/views/Home/Notification';
-import Line from '@/views/Home/Line';
-import Message from '@/views/Home/Message';
+import VisitItem from '@/widgets/VisitItem';
+import Revenue from '@/widgets/Revenue';
+import Progress from '@/widgets/Progress';
+import Calendar from '@/widgets/Calendar';
+import Notification from '@/widgets/Notification';
+import Line from '@/widgets/Line';
+import Message from '@/widgets/Message';
 class HomePage extends React.Component {
     render() {
         return (

@@ -4,9 +4,9 @@ import asyncComponent from '@/utils/asyncComponent'
 
 import Layout from '@/components/Layout'
 import Login from '@/pages/Login/index'
-const HomePage = asyncComponent(() => import("@/pages/Home/index"))
-const AboutPage = asyncComponent(() => import("@/pages/About/index"))
-const ListPage = asyncComponent(() => import("@/pages/List/index"))
+const Analysis = asyncComponent(() => import("@/pages/Analysis/index"))
+const Monitor = asyncComponent(() => import("@/pages/Monitor/index"))
+const Widgets = asyncComponent(() => import("@/pages/Widgets/index"))
 const NotFound = asyncComponent(() => import("@/pages/NotFound/index"))
 class RouterConfig extends Component {
 
@@ -16,10 +16,10 @@ class RouterConfig extends Component {
                 <Switch>
                     <Route path="/Index" render={() =>
                         <Layout >
-                            <Redirect to="/Index/Home" />
-                            <Route exact path="/Index/Home" component={HomePage} />
-                            <Route exact path="/Index/About" component={AboutPage}></Route>
-                            <Route exact path="/Index/List" component={ListPage} />
+                            <Redirect to="/Index/Analysis" />
+                            <Route exact path="/Index/Analysis" component={Analysis} />
+                            <Route exact path="/Index/Monitor" component={Monitor}></Route>
+                            <Route exact path="/Index/Widgets" component={Widgets} />
                         </Layout>
                     } >
                     </Route>

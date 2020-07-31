@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactEcharts from 'echarts-for-react';
+
 class LineItem extends Component {
     constructor(props) {
         super(props);
@@ -77,7 +78,7 @@ class LineItem extends Component {
         return (
             <div className="widget-wrap">
                 <section className="widget">
-                    <h5 className="title">Notifications</h5>
+                    <h5 className="title">Echarts Line</h5>
                     <div className="widgetBody widget-body ">
                         <ReactEcharts option={this.getOption()}
                             style={{ height: '350px', width: '100%' }} />

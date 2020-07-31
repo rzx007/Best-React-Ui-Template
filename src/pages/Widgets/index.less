@@ -1,0 +1,47 @@
+.dashboard-page {
+    .page-title {
+        margin: 0 0 calc(1rem + 6px);
+    }
+
+    .sidesWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .analyticsSide {
+            transition: all .5s ease-in-out;
+            width: 80%;
+
+            &:last-child {
+                width: 20%;
+                padding-left: 26px;
+            }
+        }
+
+        .not-item {
+            margin-bottom: 2rem;
+            cursor: pointer;
+            .not-icon {
+                font-size: 1.8rem;
+                color: var(--basic-color);
+                margin-right: 2rem;
+            }
+
+            .not-content {
+                margin-bottom: 0;
+                font-size: 1.8rem;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .analyticsSide {
+                width: 100% !important;
+
+                &:last-child {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+}

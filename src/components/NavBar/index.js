@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import avatar from "../../assets/avatar.png";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import "./index.less"
 class NavBar extends Component {
   constructor(props) {
@@ -15,12 +16,19 @@ class NavBar extends Component {
     return this.props.trigger(this.state.open)
   }
   render() {
+    let menuButton;
+    if (this.state.open) {
+      menuButton = <MenuFoldOutlined className="menu-trigger" />;
+    } else {
+      menuButton = <MenuUnfoldOutlined className="menu-trigger" />;
+    }
     return (
       <div className='nav-bar'>
         <ul className="nav">
           <li className="nav-item"
             onClick={() => this.trigger()}>
-            <i className={`iconfont menu-trigger ${this.state.open ? '' : 'isClose'}`}>&#xe6ae;</i>
+            {/* <i className={`iconfont menu-trigger ${this.state.open ? '' : 'isClose'}`}>&#xe6ae;</i> */}
+            {menuButton}
           </li>
 
         </ul>
