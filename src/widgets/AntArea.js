@@ -4,7 +4,7 @@ const AntArea = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
         asyncFetch();
-    }, []);
+    }, [data]);
     const asyncFetch = () => {
         fetch('https://gw.alipayobjects.com/os/antfincdn/YdLK%24VvSkW/fireworks-sales.json')
             .then(response => response.json())
