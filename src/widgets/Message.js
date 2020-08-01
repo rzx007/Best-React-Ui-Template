@@ -12,6 +12,10 @@ class MessageItem extends Component {
             bgClassName: 'bg-primary'
         }
     }
+    // 指定 props 的默认值， 这个方法只有浏览器编译以后 才会生效
+    static defaultProps = {
+        message: 'Lots of possibilities to customize yournew admin template'
+    }
     componentWillMount() {
         const type = this.props.type ? this.props.type : 'primary'
         this.state.msgTyoe.forEach(item => {
@@ -30,7 +34,7 @@ class MessageItem extends Component {
                     <div className="widgetBody widget-body ">
                         <MessageOutlined className=" text-white" style={{ fontSize: '2.4rem' }} />
                         <h5 className="text-white mt-sm">
-                            Lots of possibilities to customize yournew admin template
+                            {this.props.message}
                         </h5>
                         <p className="mt-lg  text-white">
                             <strong >83</strong> likes

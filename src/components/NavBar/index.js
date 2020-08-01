@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
-import avatar from "../../assets/avatar.png";
+import avatar from "@/assets/avatar.png";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { isMobile } from "@/utils/mediaQuery";
 import "./index.less"
 class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       open: true
+    }
+  }
+  componentDidMount() {
+    console.log('isMobile:' + isMobile);
+    if (isMobile) {
+      this.setState({
+        open: false
+      })
+      this.props.trigger(this.state.open)
     }
   }
   trigger = () => {
@@ -43,8 +53,7 @@ class NavBar extends Component {
             <span className="alert-num">13 </span>
             <i className="iconfont">&#xe6a6;</i>
           </li>
-          <li className="nav-item"></li>
-          <li className="nav-item"></li>
+
         </ul>
       </div>
     );
