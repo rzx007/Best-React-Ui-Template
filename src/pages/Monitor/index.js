@@ -10,6 +10,8 @@ class AboutPage extends Component {
         this.state = {}
     }
     render() {
+        console.log(this.props);
+        
         return (
             <div className="dashboard-page">
                 <h1 className="page-title">Widgets 

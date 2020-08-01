@@ -19,7 +19,7 @@ class Login extends Component {
     componentDidMount() {
         const redirect_url = "/";
         this.setState({ redirect_url });
-        console.log( this.props.history)
+        console.log(this.props.history)
         this.props.history.listen(route => {
             console.log(route)
         })

@@ -10,6 +10,10 @@ import Notification from '@/widgets/Notification';
 import Line from '@/widgets/Line';
 import Message from '@/widgets/Message';
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
     render() {
         return (
             <div className="dashboard-page">

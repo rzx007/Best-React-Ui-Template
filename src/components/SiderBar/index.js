@@ -31,13 +31,13 @@ class SiderBar extends React.Component {
           }
         >
           <Menu.Item key="1">
-            <Link to="/Index/Analysis">Analytics</Link>
+            <Link to="/Analysis">Analytics</Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Link to="/Index/Monitor">Monitor</Link>
+            <Link to="/Monitor/12">Monitor</Link>
           </Menu.Item>
           <Menu.Item key="3">
-            <Link to="/Index/Widgets">Widgets</Link>
+            <Link to="/Widgets">Widgets</Link>
           </Menu.Item>
         </SubMenu>
         <SubMenu
