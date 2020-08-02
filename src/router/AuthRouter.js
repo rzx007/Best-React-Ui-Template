@@ -28,9 +28,9 @@ class AuthRoute extends Component {
         })
     }
     render() {
-        let C = <Route {...this.props} component={this.props.component}></Route>;
+        let C = <Route {...this.props} ></Route>;
         if (this.state.isLogged) {
-            C = <Route {...this.props} component={this.props.component}></Route>;
+            C = <Route {...this.props} ></Route>;
         } else {
             C = <Redirect to={{
                 pathname: '/Login',

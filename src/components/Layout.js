@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Content from "./Content/index"
 import NavBar from "./NavBar/index"
 import SiderBar from "./SiderBar/index"
+import ScrollToTop from "@/utils/ScrollToTop"
 import "./Layout.less"
 
 class Layout extends Component {
@@ -27,9 +28,11 @@ class Layout extends Component {
                     <div className="app-header">
                         <NavBar trigger={this.NavTrigger.bind(this)}></NavBar>
                     </div>
-                    <div className="app-content">
-                        <Content children={this.props.children}></Content>
-                    </div>
+                    <ScrollToTop>
+                        <div className="app-content">
+                            <Content children={this.props.children}></Content>
+                        </div>
+                    </ScrollToTop>
                 </div>
             </div>
         );

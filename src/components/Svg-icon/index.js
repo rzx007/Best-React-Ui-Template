@@ -6,7 +6,9 @@ class SvgIcon extends Component {
         this.state = {  }
     }
     render() { 
-        return (  );
+        return ( 
+            <h1>2</h1>
+         );
     }
 }
  
