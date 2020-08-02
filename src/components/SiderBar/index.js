@@ -1,4 +1,5 @@
 import React from 'react';
+import appRoutes from "@/mock/menu"
 import { Menu } from 'antd';
 import { HomeOutlined, SettingOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom"
@@ -30,15 +31,12 @@ class SiderBar extends React.Component {
             </span>
           }
         >
-          <Menu.Item key="1">
-            <Link to="/Analysis">Analytics</Link>
-          </Menu.Item>
-          <Menu.Item key="2">
-            <Link to="/Monitor/12">Monitor</Link>
-          </Menu.Item>
-          <Menu.Item key="3">
-            <Link to="/Widgets">Widgets</Link>
-          </Menu.Item>
+          {appRoutes.map(ele =>
+            <Menu.Item key={ele.path}>
+              <Link to={ele.path}>{ele.name}</Link>
+            </Menu.Item>
+          )}
+
         </SubMenu>
         <SubMenu
           key="sub4"
