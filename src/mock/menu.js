@@ -13,7 +13,7 @@ const appRoutes = [
     },
     {
         path: "/Widgets",
-        name:'Monitor',
+        name:'Widgets',
         component: "Widgets",
         data: { title: "Heroes List" }
     }

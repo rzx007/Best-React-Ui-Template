@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import avatar from "@/assets/avatar.png";
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined, LogoutOutlined } from '@ant-design/icons';
+import { Popover } from 'antd';
 import { isMobile } from "@/utils/mediaQuery";
+import ColorPick from "@/widgets/ColorChoose";
 import "./index.less"
 class NavBar extends Component {
   constructor(props) {
@@ -24,6 +26,10 @@ class NavBar extends Component {
       open: !this.state.open
     })
     return this.props.trigger(this.state.open)
+  }
+  logout = () => {
+    sessionStorage.removeItem("token");
+    window.location.href = "/Login";
   }
   render() {
     let menuButton;
@@ -53,7 +59,12 @@ class NavBar extends Component {
             <span className="alert-num">13 </span>
             <i className="iconfont">&#xe6a6;</i>
           </li>
-
+          <li className="nav-item">
+            <ColorPick />
+          </li>
+          <li className="nav-item">
+            <LogoutOutlined title={"退出登录"} className="user-name" onClick={() => this.logout()} />
+          </li>
         </ul>
       </div>
     );
