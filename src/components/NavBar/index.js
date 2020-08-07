@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import avatar from "@/assets/avatar.png";
 import { MenuFoldOutlined, MenuUnfoldOutlined, LogoutOutlined } from '@ant-design/icons';
-import { Popover } from 'antd';
 import { isMobile } from "@/utils/mediaQuery";
 import ColorPick from "@/widgets/ColorChoose";
 import "./index.less"

@@ -3,6 +3,7 @@ import appRoutes from "@/mock/menu"
 import { Menu } from 'antd';
 import { HomeOutlined, SettingOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom"
+import { connect } from 'react-redux'
 import "./index.less";
 const { SubMenu } = Menu;
 
@@ -13,6 +14,7 @@ class SiderBar extends React.Component {
   };
 
   render() {
+    let { theme } = this.props;
     return (
       <Menu
         onClick={this.handleClick}
@@ -47,12 +49,20 @@ class SiderBar extends React.Component {
             </span>
           }
         >
+
           <Menu.Item key="9">
             <Link to="/404">404</Link>
+          </Menu.Item>
+          <Menu.Item key="10">
+            color: {theme.themeColor}
           </Menu.Item>
         </SubMenu>
       </Menu>
     );
   }
 }
-export default SiderBar;
+export default connect(
+  state => ({
+    theme: state.theme
+  })
+)(SiderBar);

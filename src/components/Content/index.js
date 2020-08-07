@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom'
 import "./index.less";
-
+// import store from "@/redux/store"
 //  HooK
 function Content(props) {
     useEffect(() => {
