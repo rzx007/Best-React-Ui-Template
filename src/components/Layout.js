@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Content from "./Content/index"
 import NavBar from "./NavBar/index"
 import SiderBar from "./SiderBar/index"
+import SettingBar from "./SettingBar/index"
 import ScrollToTop from "@/utils/ScrollToTop"
 import containers from "@/containers/index";
 import "./Layout.less"
@@ -14,27 +15,26 @@ class Layout extends Component {
         }
     }
     NavTrigger(bool) {
-        console.log(bool);
         this.setState({
             collapsed: bool
         })
     }
     render() {
         let { state } = this.props;
+        let { collapsed } = this.state
         console.log('content');
-        console.log(state);
         return (
-            <div className={["root", this.state.collapsed ? "sidebarClose " : ''].join(' ')}>
+            <div className={["root", collapsed ? "sidebarClose " : ''].join(' ')}>
                 {state.mode === "inline" &&
                     <div className="sidebar-wrapper">
-                        <SiderBar collapsed={this.state.collapsed}></SiderBar>
+                        <SiderBar collapsed={collapsed}></SiderBar>
                     </div>
                 }
                 <div className={`layout-right ${state.mode !== "inline" ? 'layout-right-fluid' : ''}`}>
                     <div className="app-header">
                         <NavBar trigger={this.NavTrigger.bind(this)}>
                             {state.mode !== "inline" &&
-                                <SiderBar collapsed={this.state.collapsed}></SiderBar>
+                                <SiderBar collapsed={collapsed}></SiderBar>
                             }
                         </NavBar>
                     </div>
@@ -44,6 +44,7 @@ class Layout extends Component {
                         </div>
                     </ScrollToTop>
                 </div>
+                <SettingBar />
             </div>
         );
     }

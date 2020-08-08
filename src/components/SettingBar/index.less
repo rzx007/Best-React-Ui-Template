@@ -1,0 +1,47 @@
+.ant-drawer-content{
+    overflow: unset !important;
+}
+.drawer-handler{
+    position: absolute;
+    left: -47px;
+    top: calc(50% - 24px);
+    height: 47px;
+    width: 47px;
+    z-index: 100;
+    background-color: var(--basic-color);
+    text-align: center;
+    line-height: 47px;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.setting-item {
+    width: 100%;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    &:first-child {
+        border-top: none !important;
+    }
+}
+
+// nav-mode
+.mode-item {
+    width: 48px;
+    height: 42px;
+    display: inline-block;
+    margin-right: 18px;
+    cursor: pointer;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .mode-icon {
+        font-size: 1.8rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+    }
+}

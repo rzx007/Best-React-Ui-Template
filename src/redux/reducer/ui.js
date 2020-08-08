@@ -1,9 +1,10 @@
 import { CHANGE_COLOR, CHANGE_SILDER } from "../actionType"
-
+import { themeColor, navColor, mode, fiexdHeader } from "@/settings"
 const uiSetting = {
-    themeColor: localStorage.getItem("themeColor") || '#6064f4',
-    navColor: '#fff',
-    mode:'horizontal'
+    themeColor: localStorage.getItem("themeColor") || themeColor,
+    navColor: localStorage.getItem("navColor") || navColor,
+    mode: localStorage.getItem("mode") || mode,
+    fiexdHeader: localStorage.getItem("mode") || fiexdHeader
 }
 export function theme(state = uiSetting, action) {
     switch (action.type) {

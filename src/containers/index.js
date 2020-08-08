@@ -1,9 +1,9 @@
 //  菜单mode，store容器组件
 import { connect } from 'react-redux'
-function containers(Component, reducerName = 'silderMode', ...otherActions) {
+function containers(Component, reducerName = 'silderMode', mapDispatchToProps) {
     return connect(state => ({
         state: state[reducerName]
-    }), otherActions)(Component)
+    }), mapDispatchToProps)(Component)
 }
 export default containers;
 

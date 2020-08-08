@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import avatar from "@/assets/avatar.png";
 import { MenuFoldOutlined, MenuUnfoldOutlined, LogoutOutlined } from '@ant-design/icons';
 import { isMobile } from "@/utils/mediaQuery";
-import ColorPick from "@/widgets/ColorChoose";
+// import ColorPick from "@/widgets/ColorChoose";
 import containers from "@/containers/index";
 import "./index.less"
 class NavBar extends Component {
@@ -65,7 +65,7 @@ class NavBar extends Component {
             <i className="iconfont">&#xe6a6;</i>
           </li>
           <li className="nav-item">
-            <ColorPick />
+            {/* <ColorPick pickType={"Block"} /> */}
           </li>
           <li className="nav-item">
             <LogoutOutlined title={"退出登录"} className="user-name" onClick={() => this.logout()} />
