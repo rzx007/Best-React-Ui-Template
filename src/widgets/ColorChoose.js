@@ -35,16 +35,7 @@ class ColorItem extends Component {
         });
     }
 
-    componentDidMount() {
-        const localTheme = localStorage.getItem('themeColor')
-        if (localTheme) {
-            this.changeColorPickerCOlor(localTheme).then(() => {
-                document.body.style.setProperty('--basic-color', localTheme);
-            }).catch(error => {
-                console.log(error);
-            });
-        }
-    }
+    
     render() {
         let { state, pickType } = this.props
         // console.log(state);

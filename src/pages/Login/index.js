@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { Input, message } from 'antd';
+import Footer from "@/components/Footer"
 import "./index.less"
 
 class Login extends Component {
@@ -31,10 +32,11 @@ class Login extends Component {
             <div className="login-page">
                 <div className="login-form-wrapper">
                     <div className="login-form">
-                        <h4 className="login-title">Login to your Web App</h4>
-                        <p className="widget-auth-info">
+                        <h1 className="text-primary">Best-React-Ui-Template</h1>
+                        <h4 className="login-title mb-lg">Login to your Web App</h4>
+                        {/* <p className="widget-auth-info">
                             Use your email to sign in.
-                        </p>
+                        </p> */}
                         <Input
                             value={loginInfo.username}
                             onChange={e => this.changeInputValue(e.target.value, "username")}
@@ -52,6 +54,7 @@ class Login extends Component {
                         <div className="login-btn cursor" onClick={this.login}>登录</div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }
