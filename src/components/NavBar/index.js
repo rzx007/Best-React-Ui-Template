@@ -3,6 +3,7 @@ import avatar from "@/assets/avatar.png";
 import { MenuFoldOutlined, MenuUnfoldOutlined, LogoutOutlined } from '@ant-design/icons';
 import { isMobile } from "@/utils/mediaQuery";
 import ColorPick from "@/widgets/ColorChoose";
+import containers from "@/containers/index";
 import "./index.less"
 class NavBar extends Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class NavBar extends Component {
     }
   }
   componentDidMount() {
-    console.log('isMobile:' + isMobile);
     if (isMobile) {
       this.setState({
         open: false
@@ -31,12 +31,16 @@ class NavBar extends Component {
     window.location.href = "/Login";
   }
   render() {
+    let { state } = this.props
     let menuButton;
-    if (this.state.open) {
-      menuButton = <MenuFoldOutlined className="menu-trigger" />;
+    if (state.mode === "inline") {
+      this.state.open
+        ? menuButton = <MenuFoldOutlined className="menu-trigger" />
+        : menuButton = <MenuUnfoldOutlined className="menu-trigger" />
     } else {
-      menuButton = <MenuUnfoldOutlined className="menu-trigger" />;
+      menuButton = null
     }
+
     return (
       <div className='nav-bar'>
         <ul className="nav">
@@ -45,9 +49,11 @@ class NavBar extends Component {
             {/* <i className={`iconfont menu-trigger ${this.state.open ? '' : 'isClose'}`}>&#xe6ae;</i> */}
             {menuButton}
           </li>
-
         </ul>
-        <ul className="nav left-auto">
+        <div className="hor-menu">
+          {this.props.children}
+        </div>
+        <ul className="nav">
           <li className="nav-item"><i className="iconfont">&#xe6ab;</i></li>
           {/* <li className="nav-item"><i class="iconfont">&#xe6a8;</i></li> */}
           <li className="nav-item">
@@ -70,4 +76,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default containers(NavBar);

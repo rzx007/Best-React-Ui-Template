@@ -3,6 +3,7 @@ import Content from "./Content/index"
 import NavBar from "./NavBar/index"
 import SiderBar from "./SiderBar/index"
 import ScrollToTop from "@/utils/ScrollToTop"
+import containers from "@/containers/index";
 import "./Layout.less"
 
 class Layout extends Component {
@@ -19,14 +20,23 @@ class Layout extends Component {
         })
     }
     render() {
+        let { state } = this.props;
+        console.log('content');
+        console.log(state);
         return (
             <div className={["root", this.state.collapsed ? "sidebarClose " : ''].join(' ')}>
-                <div className="sidebar-wrapper">
-                    <SiderBar collapsed={this.state.collapsed}></SiderBar>
-                </div>
-                <div className="layout-right">
+                {state.mode === "inline" &&
+                    <div className="sidebar-wrapper">
+                        <SiderBar collapsed={this.state.collapsed}></SiderBar>
+                    </div>
+                }
+                <div className={`layout-right ${state.mode !== "inline" ? 'layout-right-fluid' : ''}`}>
                     <div className="app-header">
-                        <NavBar trigger={this.NavTrigger.bind(this)}></NavBar>
+                        <NavBar trigger={this.NavTrigger.bind(this)}>
+                            {state.mode !== "inline" &&
+                                <SiderBar collapsed={this.state.collapsed}></SiderBar>
+                            }
+                        </NavBar>
                     </div>
                     <ScrollToTop>
                         <div className="app-content">
@@ -39,4 +49,4 @@ class Layout extends Component {
     }
 }
 
-export default Layout;
+export default containers(Layout);

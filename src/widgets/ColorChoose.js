@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Popover } from 'antd';
 import { BgColorsOutlined } from '@ant-design/icons';
 import { BlockPicker } from "react-color";
-import { connect } from 'react-redux'
+import containers from "@/containers/index";
 import { changeColor } from "@/redux/actions"
 import PropTypes from 'prop-types'
 class ColorItem extends Component {
     //声明属性
     static propTypes = {
-        theme: PropTypes.object.isRequired,
         changeColor: PropTypes.func.isRequired,
     }
     colors = ['#6064f4', '#1DA57A', '#1890ff', "#3AB5A0", "#d54062", "#6f4a8e", "#1b1b2f"]
@@ -21,7 +20,7 @@ class ColorItem extends Component {
         return res;
     }
     handleColorChange = (colorCode) => {
-        this.setState({ color: colorCode.hex })
+        console.log(colorCode);
         this.changeColorPickerCOlor(colorCode.hex).then(() => {
             // 更换自定义样式颜色
             document.body.style.setProperty('--basic-color', colorCode.hex);
@@ -43,13 +42,13 @@ class ColorItem extends Component {
         }
     }
     render() {
-        let { theme } = this.props
-        console.log(theme);
-        let Color = <BlockPicker onChangeComplete={this.handleColorChange} colors={this.colors} color={theme.themeColor} />
+        let { state } = this.props
+        console.log(state);
+        let Color = <BlockPicker onChangeComplete={this.handleColorChange} colors={this.colors} color={state.themeColor} />
         return (
             <>
                 <Popover content={Color} placement="bottom" trigger="click">
-                    <BgColorsOutlined title={theme.themeColor} twoToneColor="#eb2f96" style={{ fontSize: "2rem" }} />
+                    <BgColorsOutlined title={state.themeColor} twoToneColor="#eb2f96" style={{ fontSize: "2rem" }} />
                 </Popover>
             </>
 
@@ -57,9 +56,4 @@ class ColorItem extends Component {
     }
 }
 
-export default connect(
-    state => ({
-        theme: state.theme,
-    }),
-    { changeColor }
-)(ColorItem);
+export default containers(ColorItem, 'theme', { changeColor });

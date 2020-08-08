@@ -3,7 +3,8 @@ import appRoutes from "@/mock/menu"
 import { Menu } from 'antd';
 import { HomeOutlined, SettingOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom"
-import { connect } from 'react-redux'
+// import { changeSilder } from "@/redux/actions"
+import containers from "@/containers/index";
 import "./index.less";
 const { SubMenu } = Menu;
 
@@ -14,14 +15,15 @@ class SiderBar extends React.Component {
   };
 
   render() {
-    let { theme } = this.props;
+    let { state } = this.props;
+    console.log(state);
     return (
       <Menu
         onClick={this.handleClick}
         style={{ height: '100%' }}
         defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
-        mode="inline"
+        // defaultOpenKeys={['sub1']}
+        mode={state.mode}
         inlineCollapsed={this.props.collapsed}
       >
         <SubMenu
@@ -33,8 +35,8 @@ class SiderBar extends React.Component {
             </span>
           }
         >
-          {appRoutes.map(ele =>
-            <Menu.Item key={ele.path}>
+          {appRoutes.map((ele, index) =>
+            <Menu.Item key={index + 1}>
               <Link to={ele.path}>{ele.name}</Link>
             </Menu.Item>
           )}
@@ -54,15 +56,11 @@ class SiderBar extends React.Component {
             <Link to="/404">404</Link>
           </Menu.Item>
           <Menu.Item key="10">
-            color: {theme.themeColor}
+            mode: {state.mode}
           </Menu.Item>
         </SubMenu>
       </Menu>
     );
   }
 }
-export default connect(
-  state => ({
-    theme: state.theme
-  })
-)(SiderBar);
+export default containers(SiderBar);

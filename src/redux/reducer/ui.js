@@ -1,10 +1,11 @@
-import { CHANGE_COLOR } from "./actionType"
-import { combineReducers } from 'redux'
-const colors = {
+import { CHANGE_COLOR, CHANGE_SILDER } from "../actionType"
+
+const uiSetting = {
     themeColor: localStorage.getItem("themeColor") || '#6064f4',
     navColor: '#fff',
+    mode:'horizontal'
 }
-function theme(state = colors, action) {
+export function theme(state = uiSetting, action) {
     switch (action.type) {
         case CHANGE_COLOR:
             return Object.assign({}, state, {
@@ -14,11 +15,17 @@ function theme(state = colors, action) {
             return state
     }
 }
-const todoApp = combineReducers({
-    theme
-})
 
-export default todoApp
+export function silderMode(state = uiSetting, action) {
+    switch (action.type) {
+        case CHANGE_SILDER:
+            return Object.assign({}, state, {
+                mode: action.mode
+            })
+        default:
+            return state
+    }
+}
 
 // 不要修改 state。 使用 Object.assign() 新建了一个副本。不
 // 能这样使用 Object.assign(state, { themeColor: action.color })，

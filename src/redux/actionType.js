@@ -1,1 +1,3 @@
 export const CHANGE_COLOR = 'CHANGE_COLOR'
+
+export const CHANGE_SILDER = 'CHANGE_SILDER'
