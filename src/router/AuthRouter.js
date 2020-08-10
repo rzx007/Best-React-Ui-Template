@@ -8,29 +8,33 @@ class AuthRoute extends Component {
         this.state = { isLogged: true }
     }
     componentDidMount() {
+        
         this.ListenUrl()
         if (this.props.path === this.props.location.pathname) {
             !this.state.isLogged && message.error('尚未登录，请登录');
-            console.log('isLogged:' + this.state.isLogged);
+            // console.log('isLogged:' + this.state.isLogged);
         }
     }
     componentDidUpdate() {
         if (this.props.path === this.props.location.pathname) {
             !this.state.isLogged && message.error('尚未登录，请登录');
-            console.log('isLogged:' + this.state.isLogged);
+            // console.log('isLogged:' + this.state.isLogged);
         }
     }
     ListenUrl() {
         this.props.history.listen(() => {  //在这里监听location对象
+            // console.log( this.props.location);
+            console.log( this.props.name);
             this.setState({
                 isLogged: sessionStorage.getItem('token') ? true : false
             })
         })
     }
     render() {
+       
         let C = <Route {...this.props} ></Route>;
         if (this.state.isLogged) {
-            C = <Route {...this.props} ></Route>;
+            C = <Route {...this.props}></Route>;
         } else {
             C = <Redirect to={{
                 pathname: '/Login',

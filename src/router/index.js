@@ -21,7 +21,7 @@ class RouterConfig extends Component {
                     <Route path="/" render={(props) => (<Layout>
 
                         <Suspense fallback={<Loading />}>
-                            {appRoutes.map(ele => <AthuRoute path={ele.path} {...props} key={ele.component} component={lazy(() => import(`@/pages/${ele.component}/index`))}></AthuRoute>)}
+                            {appRoutes.map(ele => <AthuRoute path={ele.path} {...props} name={ele.name} key={ele.component} component={lazy(() => import(`@/pages/${ele.component}/index`))}></AthuRoute>)}
                             <Redirect from="/" to="/Analysis" />
                         </Suspense>
 

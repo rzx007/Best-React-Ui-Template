@@ -4,6 +4,7 @@ import NavBar from "./NavBar/index"
 import SiderBar from "./SiderBar/index"
 import SettingBar from "./SettingBar/index"
 import ScrollToTop from "@/utils/ScrollToTop"
+import Tags from "./Tags/index"
 import containers from "@/containers/index";
 import "./Layout.less"
 
@@ -22,7 +23,6 @@ class Layout extends Component {
     render() {
         let { state } = this.props;
         let { collapsed } = this.state
-        console.log('content');
         return (
             <div className={["root", collapsed ? "sidebarClose " : ''].join(' ')}>
                 {state.mode === "inline" &&
@@ -37,9 +37,10 @@ class Layout extends Component {
                                 <SiderBar collapsed={collapsed}></SiderBar>
                             }
                         </NavBar>
+                        <Tags />
                     </div>
                     <ScrollToTop>
-                        <div className="app-content">
+                        <div className=" app-content app-content-fixed-header">
                             <Content children={this.props.children}></Content>
                         </div>
                     </ScrollToTop>

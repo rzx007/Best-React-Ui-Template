@@ -4,7 +4,7 @@ class Mouse extends Component {
         super(props);
         this.handleMouseMove = this.handleMouseMove.bind(this);
         this.state = { x: 0, y: 0 };
-        this.p = React.createRef();
+        this.vdom = React.createRef();
     }
 
     handleMouseMove(event) {
@@ -14,8 +14,8 @@ class Mouse extends Component {
         });
     }
     componentDidMount(){
-        console.log( this.p.current);
-        let el = this.p.current;
+        // console.log( this.vdom.current);
+        let el = this.vdom.current;
         el.style.color='red'
     }
     // render prop 组件,react-router-dom 
@@ -27,7 +27,7 @@ class Mouse extends Component {
                     <div className="widgetBody widget-body " >
                         {/* {this.props.render(this.state)} */}
 
-                        <p ref={this.p}>{this.state.x}</p><p>{this.state.y}</p>
+                        <p ref={this.vdom}>{this.state.x}</p><p>{this.state.y}</p>
                     </div>
                 </section>
             </div>

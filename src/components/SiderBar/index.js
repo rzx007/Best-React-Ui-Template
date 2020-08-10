@@ -11,12 +11,12 @@ const { SubMenu } = Menu;
 
 class SiderBar extends React.Component {
   handleClick = e => {
-    console.log('click ', e);
+    // console.log('click ', e);
   };
 
   render() {
     let { state } = this.props;
-    console.log(state);
+    // console.log(state);
     return (
       <>
         <Menu
