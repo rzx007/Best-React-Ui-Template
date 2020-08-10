@@ -3,13 +3,13 @@
 ## Best-React-Ui-Template
 
 >react后台模板，基于ant-design,适合入门学习，基本涉及所有react知识点
-
 >模板借鉴了Ant Design Pro风格
+
 ## QuickStart
 
 ```
 # 克隆项目
-git clone https://github.com/rzx007/rzx-react-admin.git
+git clone https://github.com/rzx007/Best-React-Ui-Template.git
 
 # 进入项目目录
 cd rzx-react-admin
@@ -44,10 +44,10 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## 截图
 
-![image](./images/demo.jpg)
-`适配移动端`
-![image](./images/demo1.jpg)
+#### 适配移动端，对移动端的表现做了部分优化
 
+![image](./images/demo.jpg)
+![image](./images/demo4.jpg)
 ## 主题切换功能
 
 使用官方`antd-theme-webpack-plugin`插件，具体配置查阅官方配置
