@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import avatar from "@/assets/avatar.png";
 import { MenuFoldOutlined, MenuUnfoldOutlined, LogoutOutlined } from '@ant-design/icons';
 import { isMobile } from "@/utils/mediaQuery";
+import { withRouter } from "react-router-dom";
 // import ColorPick from "@/widgets/ColorChoose";
 import containers from "@/containers/index";
 import "./index.less"
@@ -28,7 +29,7 @@ class NavBar extends Component {
   }
   logout = () => {
     sessionStorage.removeItem("token");
-    window.location.href = "/Login";
+    this.props.history.push("/Login");
   }
   render() {
     let { state } = this.props
@@ -76,4 +77,4 @@ class NavBar extends Component {
   }
 }
 
-export default containers(NavBar);
+export default containers(withRouter(NavBar));

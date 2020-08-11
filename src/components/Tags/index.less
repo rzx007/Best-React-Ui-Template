@@ -2,10 +2,15 @@
     border-top: 1px solid #eee;
     background-color: var(--navbar-bg);
     box-shadow: var(--navbar-shadow);
-    position: relative;
+    display: flex;
+    justify-content: space-between;
 
     .tags-list {
+        flex: 1;
+        position: relative;
         overflow-x: auto;
+        margin: 0;
+        padding: 0 8px;
 
         li {
             display: inline-block;
@@ -38,5 +43,17 @@
             border: 1px solid var(--basic-color);
             color: var(--basic-color);
         }
+    }
+
+    .tags-close-box {
+        box-sizing: border-box;
+        height: 30px;
+        margin-top: 1px;
+        text-align: center;
+        width: 110px;
+        line-height: 30px;
+        box-shadow: -3px 0 15px 3px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        cursor: pointer;
     }
 }

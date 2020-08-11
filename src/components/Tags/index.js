@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from "react-router-dom";
-import { CloseOutlined } from '@ant-design/icons';
+import { CloseOutlined, DownOutlined } from '@ant-design/icons';
+import { Menu, Dropdown } from 'antd';
 import appRoutes from "@/mock/menu" //菜单，应接登录时存储
 import "./index.less"
 class Tags extends Component {
@@ -63,17 +64,44 @@ class Tags extends Component {
             : tagsList[index - 1];
         if (item) {
             // 更改路由，watch监听，调用setTags,触发自定义事件tags
-            console.log( delItem.path === curentPath);
+            console.log(delItem.path === curentPath);
             delItem.path === curentPath &&
                 this.props.history.push(item.path);
         } else {
             this.props.history.push("/Analysis");
         }
     }
+    // 关闭全部标签
+    closeAll() {
+        this.setState({
+            tagsList: []
+        })
+        this.props.history.push("/Analysis"); //路由变更
+    }
+    // 关闭其他标签
+    closeOther() {
+        let { tagsList, curentPath } = this.state;
+        const curItem = tagsList.filter(item => {
+            return item.path === curentPath; //路由变更
+        });
+        this.setState({
+            tagsList: curItem
+        })
+    }
     setActive(path) {
         return path === this.state.curentPath;
     }
     render() {
+        const menu = (
+            <Menu >
+                <Menu.Item key="1" onClick={()=>this.closeOther()}>
+                    关闭其他
+              </Menu.Item>
+                <Menu.Item key="2" onClick={()=>this.closeAll()}>
+                    关闭所有
+              </Menu.Item>
+            </Menu>
+        );
         return (
             <div className="tags-wrapper">
                 <ul className='tags-list'>
@@ -87,6 +115,11 @@ class Tags extends Component {
                         )
                     }
                 </ul>
+                <div className="tags-close-box">
+                    <Dropdown overlay={menu}>
+                        <span>标签选项 <DownOutlined /></span>
+                    </Dropdown>
+                </div>
             </div>
         );
     }
