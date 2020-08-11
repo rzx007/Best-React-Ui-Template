@@ -10,7 +10,7 @@ class ListPage extends Component {
     render() {
         return (
             <div className="dashboard-page">
-                <h1 className="page-title">Monitor <small style={{ color: "#798892", fontSize: "75%" }}>Company Performance</small></h1>
+                <h1 className="page-title">Widgets <small style={{ color: "#798892", fontSize: "75%" }}>Company Performance</small></h1>
                 <div className="sidesWrapper">
                     <div className="analyticsSide">
                         <Row gutter={20}>

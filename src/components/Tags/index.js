@@ -52,12 +52,10 @@ class Tags extends Component {
     }
     // 关闭单个标签
     closeTags(index) {
-        console.log(index);
         let { tagsList, curentPath } = this.state;
-        let route = tagsList;
-        let delItem = route.splice(index, 1)[0];
+        let delItem = tagsList.splice(index, 1)[0]; //删除的路由
         this.setState({
-            tagsList: route
+            tagsList: tagsList
         })
         // 剩余的tags
         const item = tagsList[index]
@@ -65,10 +63,11 @@ class Tags extends Component {
             : tagsList[index - 1];
         if (item) {
             // 更改路由，watch监听，调用setTags,触发自定义事件tags
+            console.log( delItem.path === curentPath);
             delItem.path === curentPath &&
-                this.props.history.push(item.fullPath);
+                this.props.history.push(item.path);
         } else {
-            // this.$router.push("/Analysis");
+            this.props.history.push("/Analysis");
         }
     }
     setActive(path) {
@@ -80,7 +79,7 @@ class Tags extends Component {
                 <ul className='tags-list'>
                     {
                         this.state.tagsList.map((item, i) =>
-                            <li key={i} className={`${this.setActive(item) ? 'active-tag' : ''}`}>
+                            <li key={i} className={`${this.setActive(item.path) ? 'active-tag' : ''}`}>
                                 <Link to={item.path}>{item.name}</Link>
                                 <CloseOutlined className='tags-icon' onClick={this.closeTags.bind(this, i)} title={"关闭"} />
                             </li>

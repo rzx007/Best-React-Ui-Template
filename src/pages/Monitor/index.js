@@ -15,7 +15,7 @@ class AboutPage extends Component {
         
         return (
             <div className="dashboard-page">
-                <h1 className="page-title">Widgets 
+                <h1 className="page-title">Monitor 
                     <small style={{ color: "#798892", fontSize: "75%" }}>Company Performance</small>
                 </h1>
                 <div className="sidesWrapper">
