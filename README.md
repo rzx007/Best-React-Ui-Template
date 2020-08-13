@@ -42,6 +42,32 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 `redux` `react-redux` `react-router-dom` `echarts-for-react` `react-color` `antd`
 
+> Create React App 脚手架工具快速搭建项目结构
+
+> react-redux 配合 Redux
+
+> react-router-dom 路由
+ 
+ ## 目录结构
+```
+├── public                   # 不参与编译的资源文件
+├── src                      # 主程序目录
+│   ├── api                     # axios 封装
+│   ├── assets                  # 资源文件
+│   │   ├── font                    # 字体文件
+│   │   └── images                  # 图片资源
+│   ├── components              # 全局公共组件,主要是布局累组件
+│   ├── contatiners             # 页面结构组件，redux容器组件
+│   ├── routesr                 # 路由目录
+│   ├── pages                   # 业务页面
+│   ├── redux                   # redux 配置
+│   ├── styles                  # 样式目录,less
+│   ├── utils                   # 工具类
+│   ├── widgets                 # 小组件
+│   ├── APP.js                  # App.js
+│   └── index.js                # index.js
+├── craco.config.js      # 配置
+```
 ## 截图
 
 #### 适配移动端，对移动端的表现做了部分优化
