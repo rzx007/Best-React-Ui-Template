@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { Input, message } from 'antd';
 import Footer from "@/components/Footer"
+import { withRouter } from 'react-router-dom'
+
 import "./index.less"
 
 class Login extends Component {
@@ -75,10 +77,10 @@ class Login extends Component {
         const userInfo = JSON.stringify(loginInfo);
         localStorage.setItem("userInfo", userInfo);
         sessionStorage.setItem("token", userInfo);
-        window.location.href = redirect_url;
+        this.props.history.push(redirect_url);
         this.setState({ loginInfo: {}, redirect_url: "" });
         message.success("登录成功")
     }
 }
 
-export default Login;
+export default withRouter(Login);

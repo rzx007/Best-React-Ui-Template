@@ -12,7 +12,7 @@
 git clone https://github.com/rzx007/Best-React-Ui-Template.git
 
 # 进入项目目录
-cd rzx-react-admin
+cd Best-React-Ui-Template
 
 # 安装依赖
 npm install
@@ -47,7 +47,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 > react-redux 配合 Redux
 
 > react-router-dom 路由
- 
+
+ ## 基本功能
+
+- [x] 路由懒加载
+
  ## 目录结构
 ```
 ├── public                   # 不参与编译的资源文件
