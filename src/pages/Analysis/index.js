@@ -11,6 +11,7 @@ import Line from '@/widgets/Line';
 import Message from '@/widgets/Message';
 class HomePage extends React.Component {
     constructor(props) {
+        console.log(props)
         super(props);
         this.state = {}
     }
@@ -30,7 +31,7 @@ class HomePage extends React.Component {
                             <Col xs={24} sm={24} md={24} lg={24} xl={24}><Line /></Col>
                         </Row>
                         <Row gutter={20}>
-                            <Col xs={24} sm={24} md={12} lg={8} xl={8}><Message type={'danger'} /></Col>
+                            <Col xs={24} sm={24} md={12} lg={8} xl={8}><Message  type={'danger'} /></Col>
                             <Col xs={24} sm={24} md={12} lg={8} xl={8}><Message  /></Col>
                             <Col xs={24} sm={24} md={12} lg={8} xl={8}><Message type={'success'} /></Col>
                         </Row>

@@ -1,6 +1,6 @@
 import React, { Component, Suspense, lazy } from 'react';
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom'
-import AthuRoute from "./AuthRouter";
+import AuthRoute from "./AuthRouter";
 
 import Loading from '@/components/Loading'
 import Layout from '@/components/Layout'
@@ -21,7 +21,7 @@ class RouterConfig extends Component {
                     <Route path="/" render={(props) => (<Layout>
 
                         <Suspense fallback={<Loading />}>
-                            {appRoutes.map(ele => <AthuRoute path={ele.path} {...props} name={ele.name} key={ele.component} component={lazy(() => import(`@/pages/${ele.component}/index`))}></AthuRoute>)}
+                            {appRoutes.map((ele,index) => <AuthRoute path={ele.path} {...props} name={ele.name} key={index} component={lazy(() => import(`@/pages/${ele.component}/index`))}></AuthRoute>)}
                             <Redirect from="/" to="/Analysis" />
                         </Suspense>
 

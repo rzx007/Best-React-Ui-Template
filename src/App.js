@@ -9,14 +9,14 @@ class App extends React.Component {
     super(props);
     this.state = {}
   }
-  changeColorPickerCOlor(color) {
+  changeColorPickerColor(color) {
     const res = window.less.modifyVars({ '@primary-color': color, })
     return res;
   }
   componentDidMount() {
     const localTheme = localStorage.getItem('themeColor')
     if (localTheme) {
-      this.changeColorPickerCOlor(localTheme).then(() => {
+      this.changeColorPickerColor(localTheme).then(() => {
         document.body.style.setProperty('--basic-color', localTheme);
       }).catch(error => {
         console.log(error);

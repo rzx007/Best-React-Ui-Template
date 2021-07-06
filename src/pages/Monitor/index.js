@@ -32,7 +32,7 @@ class AboutPage extends Component {
                     </div>
                     <div className="analyticsSide">
                         <Row gutter={20}>
-                            {/* <Col xs={24} sm={12} md={12} lg={8} xl={24}><AntArea /></Col> */}
+                            <Col xs={24} sm={12} md={12} lg={8} xl={24}><AntArea /></Col>
                             <Col xs={24} sm={12} md={12} lg={8} xl={24}></Col>
                         </Row>
                     </div>

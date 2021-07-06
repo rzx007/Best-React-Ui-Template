@@ -1,7 +1,7 @@
 const path = require("path");
 const CracoLessPlugin = require('craco-less');
 const AntDesignThemePlugin = require('antd-theme-webpack-plugin');
-const CompressionPlugin = require("compression-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin"); // 压缩文件
 const options = {
     stylesDir: path.join(__dirname, './src/styles'),
     antDir: path.join(__dirname, './node_modules/antd'),
